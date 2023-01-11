@@ -1,0 +1,17 @@
+/* button default*/
+button {
+  border: 0;
+  padding: 16px;
+  border-radius: 35px;
+  cursor: pointer;
+  background: #e1bd8d;
+  box-shadow: -11.31px 11.31px 17px 0px rgba(163, 111, 60, 0.395);
+}
+
+button:focus,
+button:hover,
+button:active {
+  color: white;
+  background: #f1c68b;
+  box-shadow: -11.31px 11.31px 17px 0px rgb(232 148 65 / 40%);
+}

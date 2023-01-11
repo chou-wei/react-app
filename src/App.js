@@ -1,9 +1,7 @@
 import './style/all.css'
-import Card from '../src/components/Card'
+import Card from './containers/Card'
 
 function App() {
-  // const innerWidth = window.innerWidth
-  // const innerHeight = window.innerHeight
   return (
     <div className="app">
       <div className="header">
@@ -21,20 +19,14 @@ function App() {
         </div>
       </div>
       <div className="content">
-        <div className="left-floor">
-          <Card />
-        </div>
-        <div className="right-floor">
-          <div className="title"></div>
-          <div className="second-title"></div>
-          <div className="btn-group"></div>
-          <div className="article"></div>
-        </div>
+        <Card />
+        <div className="left-floor"></div>
+        <div className="right-floor"></div>
       </div>
       <div className="footer">
         <div className="left-footer">
           <div className="upper">© 2023 by Zhou Wei.</div>
-          <div className="downer">Powered and secured by Wix</div>
+          <div className="downer">Powered and secured by Zhou Wei</div>
         </div>
         <div className="right-footer">
           <div className="call">
