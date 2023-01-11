@@ -1,0 +1,50 @@
+/* main */
+
+.main {
+  left: 30%;
+  top: 25%;
+  width: 375px;
+  text-align: -webkit-center;
+  position: absolute;
+}
+
+/* upper */
+
+.main > .upper {
+  padding: 32px 16px;
+  background: rgba(244, 236, 230);
+  box-shadow: -11.31px 11.31px 17px 0px rgb(138 131 124 / 23%);
+}
+
+.main > .upper > .image {
+  width: 205px;
+  height: 205px;
+  background: #e3e3e3;
+  border-radius: 50%;
+}
+
+.main > .upper > .line {
+  height: 2px;
+  width: 25%;
+  background: rgba(0, 80, 255);
+}
+
+.main > .upper > .name {
+  font-weight: bold;
+  line-height: 4.2em;
+  font-size: 28px;
+}
+
+.main > .upper > .title {
+  padding-top: 15px;
+  font: normal normal normal 17px/1.4em avenir-lt-w01_35-light1475496,
+    avenir-lt-w05_35-light, sans-serif;
+}
+
+/* downer */
+
+.main > .downer {
+  height: 50px;
+  background: rgba(255, 255, 255);
+  box-shadow: -11.31px 11.31px 17px 0px rgb(138 131 124 / 23%);
+}
