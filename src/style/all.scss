@@ -1,0 +1,147 @@
+html,
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif; */
+  font-family: Madefor, Helvetica Neue, Helvetica, Arial, メイリオ, meiryo,
+    ヒラギノ角ゴ pro w3, hiragino kaku gothic pro, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* App.js */
+.app {
+  height: 100vh;
+  /* header */
+  .header {
+    width: 100%;
+    height: 75px;
+    z-index: 99;
+    display: grid;
+    position: fixed;
+    grid-template-columns: 55% 45%;
+    background: white;
+
+    /* left-logo */
+    .left-logo {
+      display: flex;
+      flex: 1 1;
+      align-items: center;
+
+      .dot {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: #ebcc5d;
+        margin: 16px;
+      }
+
+      .website-name {
+        display: flex;
+        align-items: center;
+
+        line-height: 1em;
+        font: normal normal bold 25px/1.4em poppins-semibold, poppins,
+          sans-serif;
+      }
+
+      .small-font {
+        padding-top: 5px;
+        margin-left: 5px;
+
+        font: normal normal normal 17px/1.4em avenir-lt-w01_35-light1475496,
+          avenir-lt-w05_35-light, sans-serif;
+      }
+    }
+
+    /* right-logo */
+    .right-nav {
+      display: grid;
+      align-items: center;
+      justify-items: center;
+      grid-template-columns: repeat(4, 1fr);
+      font: normal normal normal 14px/1.4em avenir-lt-w01_35-light1475496,
+        avenir-lt-w05_35-light, sans-serif;
+
+      cursor: pointer;
+
+      div {
+        &:active,
+        &:focus,
+        &:hover {
+          color: #0050f0;
+        }
+      }
+    }
+
+    @media (max-width: 1200px) {
+      grid-template-columns: none;
+      height: 105px;
+      justify-content: center;
+    }
+  }
+
+  /* footer */
+  .footer {
+    display: grid;
+    height: 75px;
+    z-index: 999;
+    position: relative;
+    background: white;
+    grid-template-columns: 45% 55%;
+
+    .left-footer {
+      align-self: center;
+      margin-left: 35px;
+      color: rgba(0, 0, 0);
+      font: normal normal normal 14px/1.4em avenir-lt-w01_35-light1475496,
+        avenir-lt-w05_35-light, sans-serif;
+    }
+
+    .right-footer {
+      display: grid;
+      padding: 16px;
+      grid-template-columns: repeat(2, 1fr);
+      font: normal normal normal 14px/1.4em avenir-lt-w01_85-heavy1475544,
+        avenir-lt-w05_85-heavy, sans-serif;
+
+      div {
+        justify-self: center;
+
+        .label {
+          text-align: center;
+          font-weight: bold;
+        }
+
+        .text {
+          font: normal normal normal 14px/1.4em avenir-lt-w01_35-light1475496,
+            avenir-lt-w05_35-light, sans-serif;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .footer {
+      display: none;
+    }
+  }
+
+  /* content */
+  .content {
+    width: 100%;
+    height: 100%;
+  }
+}

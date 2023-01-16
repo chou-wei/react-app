@@ -5,7 +5,7 @@
   display: grid;
   position: absolute;
   grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(8, 1fr);
+  grid-template-rows: repeat(10, 1fr);
   gap: 16px;
 }
 
@@ -13,7 +13,7 @@
 .article {
   display: grid;
   gap: 16px;
-  grid-area: 2/8/8/5;
+  grid-area: 2/5/8/8;
 }
 
 .article > .title {
@@ -38,6 +38,12 @@
     avenir-lt-w05_35-light, sans-serif;
 }
 
+@media (max-width: 1200px) {
+  .article {
+    display: none;
+  }
+}
+
 /* card-main */
 .card-main {
   grid-area: 2/3/7/5;
@@ -45,7 +51,7 @@
   text-align: -webkit-center;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1200px) {
   .card-main {
     grid-area: 2/3/7/8;
   }

@@ -1,7 +1,23 @@
-import './style/all.css'
-import Card from './containers/Card'
+import './style/all.scss'
+import Nav from './components/Nav'
+import Footer from './containers/Footer'
+
+import Home from '../src/containers/Home'
+import Contact from '../src/containers/Contact'
+import Projects from '../src/containers/Projects'
+import Resume from '../src/containers/Resume'
+
+import React from 'react'
+import { BrowserRouter, Route } from 'react-router-dom'
 
 function App() {
+  const navList = [
+    { class: 'about-me', label: 'ABOUT ME', page: 'Home' },
+    { class: 'resume', label: 'RESUME', page: 'Resume' },
+    { class: 'projects', label: 'PROJECTS', page: 'Projects' },
+    { class: 'contact', label: 'CONTACT', page: 'Contact' },
+  ]
+
   return (
     <div className="app">
       <div className="header">
@@ -12,33 +28,26 @@ function App() {
           </div>
         </div>
         <div className="right-nav">
-          <div className="about-me">ABOUT ME</div>
-          <div className="resume">RESUME</div>
-          <div className="projects">PROJECTS</div>
-          <div className="contact">CONTACT</div>
+          <Nav navList={navList} />
         </div>
       </div>
       <div className="content">
-        <Card />
-        <div className="left-floor"></div>
-        <div className="right-floor"></div>
+        <BrowserRouter>
+          <Route path="/home">
+            <Home />
+          </Route>
+          <Route path="/contact">
+            <Contact />
+          </Route>
+          <Route path="/projects">
+            <Projects />
+          </Route>
+          <Route path="/resume">
+            <Resume />
+          </Route>
+        </BrowserRouter>
       </div>
-      <div className="footer">
-        <div className="left-footer">
-          <div className="upper">© 2023 by Zhou Wei.</div>
-          <div className="downer">Powered and secured by Zhou Wei</div>
-        </div>
-        <div className="right-footer">
-          <div className="call">
-            <div className="label"> Call</div>
-            <div className="text">123-456-7890</div>
-          </div>
-          <div className="write">
-            <div className="label">Write</div>
-            <div className="text">info@mysite.com</div>
-          </div>
-        </div>
-      </div>
+      <Footer />
     </div>
   )
 }

@@ -1,0 +1,12 @@
+/* home */
+.home {
+  display: grid;
+  grid-template-columns: 45% 55%;
+  height: 100%;
+  padding-top: 75px;
+}
+
+.home > .left-floor {
+  height: 100%;
+  background: rgba(230, 218, 206);
+}

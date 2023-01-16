@@ -1,9 +1,10 @@
+import React from 'react'
 import '../style/Button.css'
 import PropTypes from 'prop-types'
 
 function Button({ btnList }) {
   return btnList.map((btn) => {
-    return <button>{btn.name}</button>
+    return <button key={btn.name}>{btn.name}</button>
   })
 }
 

@@ -5,7 +5,9 @@ button {
   border-radius: 35px;
   cursor: pointer;
   background: #e1bd8d;
-  box-shadow: -11.31px 11.31px 17px 0px rgba(163, 111, 60, 0.395);
+  box-shadow: -1.31px 8.31px 10px -2px rgb(153 111 60 / 40%);
+  font: normal normal normal 14px/1.4em avenir-lt-w01_85-heavy1475544,
+    avenir-lt-w05_85-heavy, sans-serif;
 }
 
 button:focus,
@@ -13,5 +15,5 @@ button:hover,
 button:active {
   color: white;
   background: #f1c68b;
-  box-shadow: -11.31px 11.31px 17px 0px rgb(232 148 65 / 40%);
+  box-shadow: -1.31px 8.31px 10px -1px rgb(163 111 60 / 60%);
 }
