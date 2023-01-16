@@ -7,7 +7,7 @@ function Nav({ navList }) {
   return navList.map((nav) => {
     return (
       <div className={nav.class} key={nav.page}>
-        <Link to={nav.page}> {nav.label}</Link>
+        <Link to={nav.page}>{nav.label}</Link>
       </div>
     )
   })

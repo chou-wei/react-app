@@ -1,22 +1,17 @@
 import './style/all.scss'
-import Nav from './components/Nav'
 import Footer from './containers/Footer'
-
-import Home from '../src/containers/Home'
-import Contact from '../src/containers/Contact'
-import Projects from '../src/containers/Projects'
-import Resume from '../src/containers/Resume'
-
 import React from 'react'
-import { BrowserRouter, Route } from 'react-router-dom'
+// import Nav from './components/Nav'
+import { Route, Link, withRouter } from 'react-router-dom'
+import { component } from '../src/containers/allContainers'
 
 function App() {
-  const navList = [
-    { class: 'about-me', label: 'ABOUT ME', page: 'Home' },
-    { class: 'resume', label: 'RESUME', page: 'Resume' },
-    { class: 'projects', label: 'PROJECTS', page: 'Projects' },
-    { class: 'contact', label: 'CONTACT', page: 'Contact' },
-  ]
+  const { Contact, Home, Resume, Projects } = component
+
+  function refresh() {
+    window.location.reload()
+    console.log(`refresh!!`)
+  }
 
   return (
     <div className="app">
@@ -28,28 +23,29 @@ function App() {
           </div>
         </div>
         <div className="right-nav">
-          <Nav navList={navList} />
+          <div className="about-me" key="Home" onClick={refresh}>
+            <Link to="/home">ABOUT ME</Link>
+          </div>
+          <div className="resume" key="Resume" onClick={refresh}>
+            <Link to="/resume">RESUME</Link>
+          </div>
+          <div className="projects" key="Projects" onClick={refresh}>
+            <Link to="/projects">PROJECTS</Link>
+          </div>
+          <div className="contact" key="Contact" onClick={refresh}>
+            <Link to="/contact">CONTACT</Link>
+          </div>
         </div>
       </div>
       <div className="content">
-        <BrowserRouter>
-          <Route path="/home">
-            <Home />
-          </Route>
-          <Route path="/contact">
-            <Contact />
-          </Route>
-          <Route path="/projects">
-            <Projects />
-          </Route>
-          <Route path="/resume">
-            <Resume />
-          </Route>
-        </BrowserRouter>
+        <Route exact path="/home" component={() => <Home />} />
+        <Route exact path="/contact" component={() => <Contact />} />
+        <Route exact path="/projects" component={() => <Projects />} />
+        <Route exact path="/resume" component={() => <Resume />} />
       </div>
       <Footer />
     </div>
   )
 }
 
-export default App
+export default withRouter(App)
