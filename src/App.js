@@ -1,17 +1,20 @@
-import './style/all.scss'
-import Footer from './containers/Footer'
 import React from 'react'
-// import Nav from './components/Nav'
-import { Route, Link, withRouter } from 'react-router-dom'
-import { component } from '../src/containers/allContainers'
+import { Route, useLocation, Switch } from 'react-router-dom'
+import { containers } from '../src/containers/allContainers'
+import { components } from '../src/components/allComponents'
+import { TransitionGroup, CSSTransition } from 'react-transition-group'
 
 function App() {
-  const { Contact, Home, Resume, Projects } = component
+  const { Contact, Home, Resume, Projects, Footer } = containers
+  const { Nav } = components
+  const location = useLocation()
 
-  function refresh() {
-    window.location.reload()
-    console.log(`refresh!!`)
-  }
+  const navList = [
+    { class: 'about-me', label: 'ABOUT ME', page: 'Home' },
+    { class: 'resume', label: 'RESUME', page: 'Resume' },
+    { class: 'projects', label: 'PROJECTS', page: 'Projects' },
+    { class: 'contact', label: 'CONTACT', page: 'Contact' },
+  ]
 
   return (
     <div className="app">
@@ -23,29 +26,28 @@ function App() {
           </div>
         </div>
         <div className="right-nav">
-          <div className="about-me" key="Home" onClick={refresh}>
-            <Link to="/home">ABOUT ME</Link>
-          </div>
-          <div className="resume" key="Resume" onClick={refresh}>
-            <Link to="/resume">RESUME</Link>
-          </div>
-          <div className="projects" key="Projects" onClick={refresh}>
-            <Link to="/projects">PROJECTS</Link>
-          </div>
-          <div className="contact" key="Contact" onClick={refresh}>
-            <Link to="/contact">CONTACT</Link>
-          </div>
+          <Nav navList={navList} />
         </div>
       </div>
-      <div className="content">
-        <Route exact path="/home" component={() => <Home />} />
-        <Route exact path="/contact" component={() => <Contact />} />
-        <Route exact path="/projects" component={() => <Projects />} />
-        <Route exact path="/resume" component={() => <Resume />} />
+      <div className="content fade-in-image">
+        <TransitionGroup className="trans-part">
+          <CSSTransition
+            key={location.pathname}
+            classNames="fade"
+            timeout={300}
+          >
+            <Switch location={location}>
+              <Route exact path="/home" component={() => <Home />} />
+              <Route exact path="/contact" component={() => <Contact />} />
+              <Route exact path="/projects" component={() => <Projects />} />
+              <Route exact path="/resume" component={() => <Resume />} />
+            </Switch>
+          </CSSTransition>
+        </TransitionGroup>
       </div>
       <Footer />
     </div>
   )
 }
 
-export default withRouter(App)
+export default App

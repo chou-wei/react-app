@@ -143,6 +143,10 @@ code {
   .content {
     width: 100%;
     height: 100%;
+
+    .trans-part {
+      height: 100%;
+    }
   }
 
   a {
@@ -151,5 +155,15 @@ code {
     &:-webkit-any-link {
       color: unset;
     }
+  }
+
+  .fade-enter {
+    opacity: 0;
+    z-index: 1;
+  }
+
+  .fade-enter.fade-enter-active {
+    opacity: 1;
+    transition: opacity 250ms ease-in;
   }
 }

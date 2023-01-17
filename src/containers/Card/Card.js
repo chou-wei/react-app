@@ -1,6 +1,6 @@
-import '../style/Card.css'
+import './Card.scss'
 import React from 'react'
-import Button from '../components/Button'
+import Button from '../../components/Button/Button'
 
 function Card() {
   const btnList = [{ name: 'RESUME' }, { name: 'PROJECTS' }]

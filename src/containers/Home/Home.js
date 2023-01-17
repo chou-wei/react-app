@@ -1,5 +1,5 @@
-import '../style/Home.css'
-import Card from './Card'
+import './Home.scss'
+import Card from '../Card/Card'
 import React from 'react'
 
 function Home() {

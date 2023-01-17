@@ -1,6 +1,6 @@
 import React from 'react'
-import '../style/Button.css'
 import PropTypes from 'prop-types'
+import './Button.scss'
 
 function Button({ btnList }) {
   return btnList.map((btn) => {
