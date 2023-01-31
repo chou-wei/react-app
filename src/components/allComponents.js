@@ -1,7 +1,9 @@
-import Button from './Button/Button'
-import Nav from './Nav/Nav'
+import TitleTheme from './TitleTheme/TitleTheme'
+import InfoCard from './InfoCard/InfoCard'
+import Liner from './Liner/Liner'
 
 export const components = {
-  Button,
-  Nav,
+  TitleTheme,
+  InfoCard,
+  Liner,
 }

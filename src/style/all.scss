@@ -1,3 +1,37 @@
+@font-face {
+  font-family: 'QJae';
+  src: local('QJae'), url('./font/qjae/QJae.ttf') format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'School_Script_Dashed';
+  src: local('School_Script_Dashed'),
+    url('./font/school_script_dashed/SchoolScriptDashed.ttf') format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Japanese_Brush';
+  src: local('Japanese_Brush'),
+    url('./font/japanese_brush/JAPAB.ttf') format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Nixie_One';
+  src: local('Nixie_One'),
+    url('./font/nixie_one/NixieOne.ttf') format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Delius_Unicase';
+  src: local('Delius_Unicase'),
+    url('./font/delius_unicase/DeliusUnicase-Bold.ttf') format('truetype');
+  font-weight: bold;
+}
+
 html,
 body {
   height: 100%;
@@ -6,76 +40,50 @@ body {
 }
 
 body {
+  background-color: #f9fafa;
+  color: #20303c;
+  font-family: QJae, School_Script_Dashed, Nixie_One, Delius_Unicase, sans-serif;
+  // font-family: Madefor, Helvetica Neue, Helvetica, Arial, メイリオ, meiryo,
+  //   ヒラギノ角ゴ pro w3, hiragino kaku gothic pro, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  height: 100%;
+  line-height: 1.5;
   margin: 0;
-  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif; */
-  font-family: Madefor, Helvetica Neue, Helvetica, Arial, メイリオ, meiryo,
-    ヒラギノ角ゴ pro w3, hiragino kaku gothic pro, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  padding: 0;
+  width: 100%;
 }
 
 /* App.js */
 .app {
-  height: 100vh;
+  // height: 100vh;
+  // display: grid;
+  // grid-template-rows: auto 75px;
+
+  /*2023/01/30 update*/
+  align-items: start;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: max-content max-content min-content max-content;
+  justify-content: stretch;
+
   /* header */
   .header {
     width: 100%;
     height: 75px;
     z-index: 99;
-    display: grid;
     position: fixed;
+    display: grid;
     grid-template-columns: 55% 45%;
     background: white;
-
-    /* left-logo */
-    .left-logo {
-      display: flex;
-      flex: 1 1;
-      align-items: center;
-
-      .dot {
-        width: 16px;
-        height: 16px;
-        border-radius: 50%;
-        background: #ebcc5d;
-        margin: 16px;
-      }
-
-      .website-name {
-        display: flex;
-        align-items: center;
-
-        line-height: 1em;
-        font: normal normal bold 25px/1.4em poppins-semibold, poppins,
-          sans-serif;
-      }
-
-      .small-font {
-        padding-top: 5px;
-        margin-left: 5px;
-
-        font: normal normal normal 17px/1.4em avenir-lt-w01_35-light1475496,
-          avenir-lt-w05_35-light, sans-serif;
-      }
-    }
 
     /* right-logo */
     .right-nav {
       display: grid;
-      align-items: center;
-      justify-items: center;
       grid-template-columns: repeat(4, 1fr);
-      font: normal normal normal 14px/1.4em avenir-lt-w01_35-light1475496,
-        avenir-lt-w05_35-light, sans-serif;
-
+      font: var(--fnt, var(--font_1));
       cursor: pointer;
+      align-self: center;
 
       div {
         &:active,
@@ -133,21 +141,18 @@ code {
     }
   }
 
-  @media (max-width: 1200px) {
-    .footer {
-      display: none;
-    }
-  }
-
   /* content */
   .content {
     width: 100%;
     height: 100%;
+    display: grid;
 
     .trans-part {
       height: 100%;
     }
   }
+
+  /* Link css */
 
   a {
     text-decoration: none;
@@ -157,13 +162,92 @@ code {
     }
   }
 
+  @media (max-width: 1200px) {
+    .footer {
+      display: none;
+    }
+
+    .trans-part {
+      padding-top: 105px !important;
+    }
+  }
+
   .fade-enter {
     opacity: 0;
     z-index: 1;
+    transition: opacity 250ms ease-out;
   }
 
   .fade-enter.fade-enter-active {
     opacity: 1;
     transition: opacity 250ms ease-in;
   }
+}
+
+/* root */
+:root {
+  --color_0: 255, 255, 255;
+  --color_27: 131, 211, 187;
+  --color_1: 255, 255, 255;
+  --color_2: 0, 0, 0;
+  --color_3: 237, 28, 36;
+  --color_4: 0, 136, 203;
+  --color_5: 255, 203, 5;
+  --color_6: 114, 114, 114;
+  --color_7: 176, 176, 176;
+  --color_8: 255, 255, 255;
+  --color_28: 45, 189, 146;
+  --color_9: 114, 114, 114;
+  --color_10: 176, 176, 176;
+  --color_11: 255, 255, 255;
+  --color_12: 232, 230, 230;
+  --color_13: 179, 179, 179;
+  --color_14: 89, 89, 89;
+  --color_15: 0, 0, 0;
+  --color_16: 201, 165, 248;
+  --color_17: 173, 121, 241;
+  --color_18: 102, 0, 234;
+  --color_29: 30, 126, 97;
+  --color_19: 68, 0, 156;
+  --color_20: 34, 0, 78;
+  --color_21: 173, 198, 248;
+  --color_22: 131, 168, 240;
+  --color_23: 21, 93, 233;
+  --color_24: 14, 62, 155;
+  --color_25: 7, 31, 78;
+  --color_30: 15, 63, 49;
+  --color_31: 245, 171, 207;
+  --color_32: 234, 129, 180;
+  --color_33: 224, 22, 120;
+  --color_34: 149, 15, 80;
+  --color_35: 75, 7, 40;
+  --font_0: normal normal normal 116px/1.4em playfairdisplay-bold,
+    'playfair display', serif;
+  --font_1: normal normal normal 16px/1.4em din-next-w01-light,
+    din-next-w02-light, din-next-w10-light, sans-serif;
+  --font_2: normal normal normal 38px/1.4em playfairdisplay-bold,
+    'playfair display', serif;
+  --font_3: normal normal normal 22px/1.4em avenir-lt-w01_35-light1475496,
+    avenir-lt-w05_35-light, sans-serif;
+  --font_4: normal normal normal 20px/1.4em playfairdisplay-bold,
+    'playfair display', serif;
+  --font_5: normal normal normal 20px/1.4em avenir-lt-w01_85-heavy1475544,
+    avenir-lt-w05_85-heavy, sans-serif;
+  --font_6: normal normal normal 14px/1.4em avenir-lt-w01_35-light1475496,
+    avenir-lt-w05_35-light, sans-serif;
+  --font_7: normal normal normal 17px/1.4em 'playfair display', serif;
+  --font_8: normal normal normal 17px/1.4em avenir-lt-w01_35-light1475496,
+    avenir-lt-w05_35-light, sans-serif;
+  --font_9: normal normal normal 14px/1.4em avenir-lt-w01_35-light1475496,
+    avenir-lt-w05_35-light, sans-serif;
+  --font_10: normal normal normal 12px/1.4em din-next-w01-light,
+    din-next-w02-light, din-next-w10-light, sans-serif;
+  --wix-ads-height: 0px;
+  --wix-ads-top-height: 0px;
+  --site-width: 980px;
+  --above-all-z-index: 100000;
+  --portals-z-index: 100001;
+  --minViewportSize: 320;
+  --color_26: 174, 233, 215;
+  --maxViewportSize: 1920;
 }

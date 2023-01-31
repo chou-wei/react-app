@@ -1,13 +1,12 @@
 import './Home.scss'
-import Card from '../Card/Card'
-import React from 'react'
+import { components } from '../../components/allComponents'
 
 function Home() {
+  const { InfoCard, Liner } = components
   return (
-    <div className="home">
-      <Card />
-      <div className="left-floor"></div>
-      <div className="right-floor"></div>
+    <div className="home-main">
+      <InfoCard />
+      <Liner />
     </div>
   )
 }

@@ -1,0 +1,5 @@
+import './qjae/QJae.ttf'
+import './school_script_dashed/SchoolScriptDashed.ttf'
+import './japanese_brush/JAPAB.ttf'
+import './nixie_one/NixieOne.ttf'
+import './delius_unicase/DeliusUnicase-Bold.ttf'

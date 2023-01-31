@@ -1,0 +1,58 @@
+.card-main {
+  width: 940px;
+  border: 1px solid black;
+  position: relative;
+
+  .title-block {
+    width: 384px;
+    height: 62.39px;
+    position: absolute;
+    border: 1px solid black;
+    top: -35px;
+    left: -1px;
+    background-color: #f9fafa;
+    font: var(--font_3);
+    color: rgb(var(--color_15));
+    text-align: center;
+    span {
+      line-height: 64px;
+      letter-spacing: 0.2em;
+    }
+  }
+
+  .info-image {
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .info-text {
+    padding: 28px 30px 35px;
+    display: grid;
+    text-align: left;
+    gap: 12px;
+
+    .date {
+      display: flex;
+      font: normal normal normal 16px/20px avenir-lt-w01_35-light1475496,
+        avenir-lt-w05_35-light, sans-serif;
+      .circle {
+        width: 2px;
+        height: 2px;
+        border-radius: 50%;
+        align-self: center;
+        background: black;
+        margin: 10px;
+      }
+    }
+    .title {
+      font: normal normal normal 28px/35px avenir-lt-w01_85-heavy1475544,
+        avenir-lt-w05_85-heavy, sans-serif;
+    }
+    .article {
+      font: normal normal normal 16px/20px avenir-lt-w01_35-light1475496,
+        avenir-lt-w05_35-light, sans-serif;
+    }
+  }
+}
